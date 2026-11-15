@@ -1,0 +1,14 @@
+<nav style="background-color: #007bff; padding: 12px 20px; display: flex; justify-content: space-between; align-items: center;">
+    <div>
+        <a href="{% url 'daftar' %}" style="color: white; text-decoration: none; font-weight: bold; margin-right: 15px;">Daftar Mahasiswa</a>
+        <a href="{% url 'tambah_mahasiswa' %}" style="color: white; text-decoration: none; margin-right: 15px;">Tambah</a>
+    </div>
+    <div>
+        {% if user.is_authenticated %}
+            <span style="color: white; margin-right: 15px;">Halo, {{ user.username }}</span>
+            <a href="{% url 'logout' %}" style="color: white; text-decoration: none; font-weight: bold;">Logout</a>
+        {% else %}
+            <a href="{% url 'login' %}" style="color: white; text-decoration: none; font-weight: bold;">Login</a>
+        {% endif %}
+    </div>
+</nav>

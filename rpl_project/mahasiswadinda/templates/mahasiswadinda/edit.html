@@ -1,0 +1,16 @@
+{% extends 'mahasiswadinda/base.html' %}
+{% load static %}
+
+{% block content %}
+<h2>Edit Mahasiswa</h2>
+
+<form method="post">
+    {% csrf_token %}
+    NIM: <input type="text" name="nim" value="{{ mhs.nim }}" required><br><br>
+    Nama: <input type="text" name="nama" value="{{ mhs.nama }}" required><br><br>
+    Program Studi: <input type="text" name="programstudi" value="{{ mhs.programstudi }}" required><br><br>
+    
+    <button type="submit" class="btn">Update</button>
+    <a href="{% url 'daftar' %}" class="btn btn-secondary">Kembali</a>
+</form>
+{% endblock %}

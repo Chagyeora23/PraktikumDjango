@@ -1,0 +1,36 @@
+{% extends 'mahasiswadinda/base.html' %}
+{% load static %}
+
+{% block content %}
+<h2>Daftar Mahasiswa</h2>
+<p>
+    <a href="{% url 'tambah_mahasiswa' %}">Tambah Mahasiswa</a>
+</p>
+<table border="1">
+    <tr>
+        <th>NIM</th>
+        <th>Nama</th>
+        <th>Program Studi</th>
+        <th>Aksi</th>
+    </tr>
+    {% for mhs in mahasiswa %}
+    <tr>
+        <td>{{ mhs.nim }}</td>
+        <td>{{ mhs.nama }}</td>
+        <td>{{ mhs.programstudi }}</td>
+        <td>
+            <a href="{% url 'edit_mahasiswa' mhs.id %}">Edit</a> |
+            <form method="POST" action="{% url 'hapus_mahasiswa' mhs.id %}" style="display:inline;"
+                  onsubmit="return confirm('Yakin ingin menghapus data ini?');">
+                {% csrf_token %}
+                <button type="submit" style="background:none; border:none; color:blue; text-decoration:underline; cursor:pointer; padding:0;">Hapus</button>
+            </form>
+        </td>
+    </tr>
+    {% empty %}
+    <tr>
+        <td colspan="4">Belum ada data.</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

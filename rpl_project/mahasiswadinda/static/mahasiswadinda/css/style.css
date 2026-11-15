@@ -1,0 +1,61 @@
+/* Styling Tabel Mahasiswa */
+.table-mahasiswa {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.table-mahasiswa th, .table-mahasiswa td {
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.table-mahasiswa th {
+    background-color: #800080; /* Warna header ungu sesuai tema praktikum */
+    color: white;
+    font-weight: bold;
+}
+
+.table-mahasiswa tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.table-mahasiswa tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Styling Tombol / Link */
+.btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #800080;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #660066;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+.btn-danger {
+    color: #dc3545;
+}
+
+.logo {
+    width: 60px;
+    height: auto;
+}

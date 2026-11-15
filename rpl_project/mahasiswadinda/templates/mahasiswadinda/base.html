@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praktikum RPL - Django</title>
+    <link rel="stylesheet" href="{% static 'mahasiswadinda/css/style.css' %}">
+</head>
+<body>
+    {% include 'mahasiswadinda/navbar.html' %}
+
+    <header>
+        <h1>Praktikum RPL - Django</h1>
+    </header>
+
+    <main>
+        <div class="container">
+            {% block content %}{% endblock %}
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Praktikum ke 3</p>
+    </footer>
+
+    <script src="{% static 'mahasiswadinda/js/main.js' %}"></script>
+</body>
+</html>
